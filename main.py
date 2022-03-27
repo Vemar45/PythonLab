@@ -7,10 +7,10 @@ class Calculator:
     @staticmethod
     def __get_number_from_str(string):
         try:
-            number = float(string)
-            if number.is_integer():
-                return int(number)
-            return number
+            numberFloat = float(string)
+            if numberFloat.is_integer():
+                return int(string)
+            return numberFloat
         except ValueError:
             return None
 
@@ -42,6 +42,8 @@ class Calculator:
                 if len(values) > 1:
                     value2, value1 = values.pop(), values.pop()
                     values.append(round(Calculator.__calculate(value1, value2, obj), 8))
+                else:
+                    raise Exception
             else:
                 raise ValueError
         if len(values) == 1:
