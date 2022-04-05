@@ -1,12 +1,12 @@
 import unittest
-from CaclulatorDB import CalculatorDB
+from CalculatorDB.CaclulatorDB import CalculatorDB
 
 
 class Add(unittest.TestCase):
     def setUp(self):
         try:
             self.db = CalculatorDB(database="test.db", clear=True)
-        except:
+        except Exception:
             self.skipTest("Database not found")
 
     def test_add_example_str_str(self):
