@@ -15,7 +15,7 @@ class CalculatorDB:
             cursor = self.__conn.cursor()
             cursor.execute('CREATE TABLE IF NOT EXISTS example(exampleInput text, exampleOutput text)')
             self.__conn.commit()
-        except:
+        except Exception:
             raise TypeError
 
     def add_example(self, exampleInput, exampleOutput):
